@@ -1026,27 +1026,60 @@
     );
     document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-    // Typing animation for hero name
-    (function typeWriter() {
+    // Typing animation loop for hero name
+    (function typeLoop() {
       const el = document.getElementById('typed-name');
-      const text = 'Parth Tyagi';
+      const words = ['Parth Tyagi', 'developer', 'engineer'];
       const cursor = document.createElement('span');
       cursor.className = 'typing-cursor';
-      let i = 0;
       el.textContent = '';
       el.appendChild(cursor);
-      function type() {
-        if (i < text.length) {
-          el.insertBefore(document.createTextNode(text[i]), cursor);
-          i++;
-          setTimeout(type, 90);
-        } else {
-          // Keep cursor blinking for 2s then remove
-          setTimeout(() => cursor.remove(), 2000);
+
+      let wordIdx = 0;
+
+      function typeWord(word, cb) {
+        let i = 0;
+        function tick() {
+          if (i < word.length) {
+            el.insertBefore(document.createTextNode(word[i]), cursor);
+            i++;
+            setTimeout(tick, 90);
+          } else {
+            setTimeout(cb, 1800);
+          }
         }
+        tick();
       }
+
+      function deleteWord(cb) {
+        function tick() {
+          const textNodes = Array.from(el.childNodes).filter(n => n.nodeType === 3);
+          if (textNodes.length) {
+            const last = textNodes[textNodes.length - 1];
+            if (last.textContent.length > 1) {
+              last.textContent = last.textContent.slice(0, -1);
+            } else {
+              last.remove();
+            }
+            setTimeout(tick, 50);
+          } else {
+            setTimeout(cb, 400);
+          }
+        }
+        tick();
+      }
+
+      function cycle() {
+        typeWord(words[wordIdx], () => {
+          deleteWord(() => {
+            wordIdx = (wordIdx + 1) % words.length;
+            cycle();
+          });
+        });
+      }
+
       // Start after a brief delay to let the reveal animation play
-      setTimeout(type, 400);
+      setTimeout(cycle, 400);
     })();
 
     // Custom cursor
