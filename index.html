@@ -359,12 +359,13 @@
       color: var(--muted); line-height: 1.8;
     }
     .timeline-meta .date { color: var(--accent); margin-bottom: 0.25rem; }
-    .timeline-body h3 {
+    .timeline-body .org {
       font-size: 1.15rem; font-weight: 600;
       margin-bottom: 0.25rem; letter-spacing: -0.01em;
     }
-    .timeline-body .org {
-      font-size: 0.85rem; color: var(--muted); margin-bottom: 1rem;
+    .timeline-body h3 {
+      font-size: 0.85rem; font-weight: 400;
+      color: var(--muted); margin-bottom: 1rem;
     }
     .timeline-body ul {
       list-style: none;
@@ -749,42 +750,29 @@
     <div class="timeline">
       <div class="timeline-item reveal">
         <div class="timeline-meta">
-          <div class="date">Jan 2026 – Present</div>
-          Mississauga, ON
+          <div class="date">June 2026 – Present</div>
+          Toronto, ON
         </div>
         <div class="timeline-body">
-          <h3>Director of Tech</h3>
-          <div class="org">Computer Science Student Community</div>
+          <div class="org">Tempo Software</div>
+          <h3>Software Engineer Intern</h3>
           <ul>
-            <li>Led the technical team, managing development workflows, code reviews, and feature rollouts</li>
-            <li>Maintained and improved infra, shipping updates while ensuring performance and reliability</li>
-            <li>Delivered hands-on workshops, mentored students on practical tools &amp; real-life applications</li>
+            <li>Working with Java/Spring Boot to build and maintain backend services for a SaaS platform</li>
+            <li>Building RESTful APIs and integrating with third-party services to enhance platform functionality</li>
+            <li>Developing React frontends using TypeScript, Redux, and Material-UI to improve user experience</li>
+            <li>Implementing unit and integration tests to ensure code quality and reliability</li>
+            <li>Collaborating with cross-functional teams to deliver new features and improvements</li>
           </ul>
         </div>
       </div>
       <div class="timeline-item reveal reveal-d1">
         <div class="timeline-meta">
-          <div class="date">Sep 2025 – Jan 2026</div>
-          Mississauga, ON
-        </div>
-        <div class="timeline-body">
-          <h3>Software Engineer</h3>
-          <div class="org">Computer Science Student Community</div>
-          <ul>
-            <li>Built a RAG-based AI chatbot for the CSSC site, improving support for 3K+ monthly users</li>
-            <li>Developed a resources hub (React + Angular) with search, tagging, and GitHub/Drive sync</li>
-            <li>Set up Jenkins CI/CD with linting, tests, and automated deploys to improve release quality</li>
-          </ul>
-        </div>
-      </div>
-      <div class="timeline-item reveal reveal-d2">
-        <div class="timeline-meta">
           <div class="date">Apr 2025 – Jul 2025</div>
           Toronto, ON
         </div>
         <div class="timeline-body">
-          <h3>Software Engineering Intern</h3>
           <div class="org">Esya Technologies</div>
+          <h3>Software Engineering Intern</h3>
           <ul>
             <li>Built FastAPI services for PII detection/anonymization using YAML + regex for ETL pipelines</li>
             <li>Deployed dev/staging on AWS (ECS, S3, KMS) with Docker + GitHub Actions CI/CD</li>
@@ -793,6 +781,36 @@
             <li>Orchestrated S3-triggered ETL workflows using AWS Lambda</li>
             <li>Expanded pytest coverage with synthetic data; improved F1 ~92% → ~96%</li>
             <li>Implemented k-anonymity checks and privacy risk reports; documented in Confluence/Jira</li>
+          </ul>
+        </div>
+      </div>
+      <div class="timeline-item reveal reveal-d2">
+        <div class="timeline-meta">
+          <div class="date">Sep 2025 – Jan 2026</div>
+          Mississauga, ON
+        </div>
+        <div class="timeline-body">
+          <div class="org">Computer Science Student Community</div>
+          <h3>Software Engineer</h3>
+          <ul>
+            <li>Built a RAG-based AI chatbot for the CSSC site, improving support for 3K+ monthly users</li>
+            <li>Developed a resources hub (React + Angular) with search, tagging, and GitHub/Drive sync</li>
+            <li>Set up Jenkins CI/CD with linting, tests, and automated deploys to improve release quality</li>
+          </ul>
+        </div>
+      </div>
+      <div class="timeline-item reveal reveal-d3">
+        <div class="timeline-meta">
+          <div class="date">Jan 2026 – Present</div>
+          Mississauga, ON
+        </div>
+        <div class="timeline-body">
+          <div class="org">Computer Science Student Community</div>
+          <h3>Director of Tech</h3>
+          <ul>
+            <li>Led the technical team, managing development workflows, code reviews, and feature rollouts</li>
+            <li>Maintained and improved infra, shipping updates while ensuring performance and reliability</li>
+            <li>Delivered hands-on workshops, mentored students on practical tools &amp; real-life applications</li>
           </ul>
         </div>
       </div>
